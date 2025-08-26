@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="150.95" tests="11" skipped="0" failures="3" errors="0" timestamp="2025-08-22T04:03:01.549597100Z">
+<testcase classname="Amazon Login" name="Valid Login" time="8.838">
+<system-out><![CDATA[
+Given User is on Amazon login page..........................................passed
+When User enters email "bharadwaj333.achimsetty@gmail.com" and password "Bharadwaj333@".passed
+And User clicks on login button.............................................passed
+Then User should be logged in successfully..................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Search Product" name="Search multiple items - #1.1" time="13.075">
+<failure type="java.lang.AssertionError">
+<![CDATA[java.lang.AssertionError
+	at StepDefination.SearchSteps.search_results_should_be_displayed(SearchSteps.java:29)
+	at ✽.Search results for "headphones" should be displayed(file:///C:/Users/Bhara/OneDrive/Desktop/JAVA%20Selenium/Cucumber_bdd/src/test/resources/Features/02amazon_multiplesearch.feature:9)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User is logged into Amazon for search.................................passed
+When User searches for "headphones".........................................passed
+Then Search results for "headphones" should be displayed....................failed
+]]></system-out>
+</testcase>
+<testcase classname="Search Product" name="Search multiple items - #1.2" time="2.756">
+<system-out><![CDATA[
+Given User is logged into Amazon for search.................................passed
+When User searches for "mobiles"............................................passed
+Then Search results for "mobiles" should be displayed.......................passed
+]]></system-out>
+</testcase>
+<testcase classname="Search Product" name="Search multiple items - #1.3" time="3.786">
+<system-out><![CDATA[
+Given User is logged into Amazon for search.................................passed
+When User searches for "books"..............................................passed
+Then Search results for "books" should be displayed.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Amazon Add to Cart Functionality" name="Add a product to cart, go to cart, and delete it" time="18.499">
+<failure type="java.lang.NullPointerException" message="Cannot invoke &quot;org.openqa.selenium.support.ui.WebDriverWait.until(java.util.function.Function)&quot; because &quot;this.wait&quot; is null">
+<![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.support.ui.WebDriverWait.until(java.util.function.Function)" because "this.wait" is null
+	at StepDefination.PageClass.addFirstProductToCart(PageClass.java:86)
+	at StepDefination.Addtocart.user_adds_first_product_to_cart(Addtocart.java:35)
+	at ✽.User adds the first product to cart(file:///C:/Users/Bhara/OneDrive/Desktop/JAVA%20Selenium/Cucumber_bdd/src/test/resources/Features/03amazon_addtocart.feature:11)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User opens Amazon website to addto....................................passed
+When User logs in with email "bharadwaj333.achimsetty@gmail.com" and password "Bharadwaj333@".passed
+And User searches for product "Honeywell New Launched Moxie V20 Bluetooth v5.4 On-Ear Headphones with Mic, ENC, 25H Playback, Deep Bass, IPX4, Aux, Stereo Sound, 40ms Low Latency Gaming Mode, Padded Cushion".passed
+And User adds the first product to cart.....................................failed
+And User goes to the cart...................................................skipped
+Then User deletes the item from the cart....................................skipped
+Then Close the browser......................................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Change Amazon Account Name" name="User updates account name successfully" time="23.936">
+<system-out><![CDATA[
+Given User navigates to Amazon account settings.............................passed
+When User signs in with credentials "bharadwaj333.achimsetty@gmail.com" and "Bharadwaj333@".passed
+And User updates the account name to "Bharadwaj Achimsetty".................passed
+Then Account name should be updated successfully............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Change Amazon Account Address" name="User updates account address successfully" time="17.091">
+<failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#address\-ui\-widgets\-enterAddressStateOrRegion\-dropdown\-nativeId_15&quot;}
+  (Session info: chrome=139.0.7258.128)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.34.0', revision: '2a4c61c498'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4e5be8c539e0e4d94186b3410d5b9caa, findElement {value=address-ui-widgets-enterAddressStateOrRegion-dropdown-nativeId_15, using=id}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.128, chrome: {chromedriverVersion: 139.0.7258.138 (884e54ea8d4..., userDataDir: C:\Users\Bhara\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49155}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49155/devtoo..., se:cdpVersion: 139.0.7258.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4e5be8c539e0e4d94186b3410d5b9caa">
+<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#address\-ui\-widgets\-enterAddressStateOrRegion\-dropdown\-nativeId_15"}
+  (Session info: chrome=139.0.7258.128)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.34.0', revision: '2a4c61c498'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4e5be8c539e0e4d94186b3410d5b9caa, findElement {value=address-ui-widgets-enterAddressStateOrRegion-dropdown-nativeId_15, using=id}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.128, chrome: {chromedriverVersion: 139.0.7258.138 (884e54ea8d4..., userDataDir: C:\Users\Bhara\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49155}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49155/devtoo..., se:cdpVersion: 139.0.7258.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4e5be8c539e0e4d94186b3410d5b9caa
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+	at StepDefination.PageClass.changeAddress(PageClass.java:130)
+	at StepDefination.Changeaddress.user_modifies_the_address(Changeaddress.java:28)
+	at ✽.User modifies the address with Pincode "500081", Address "123 New Street", Area "MG Road", City "Hyderabad", State "Telangana"(file:///C:/Users/Bhara/OneDrive/Desktop/JAVA%20Selenium/Cucumber_bdd/src/test/resources/Features/05amazon_address.feature:9)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User opens Amazon account address page................................passed
+When User logs in using email "bharadwaj333.achimsetty@gmail.com" and password "Bharadwaj333@".passed
+And User modifies the address with Pincode "500081", Address "123 New Street", Area "MG Road", City "Hyderabad", State "Telangana".failed
+Then Account address should be updated successfully.........................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Shop by Category on Amazon" name="Shopper selects Books category and searches for Harry Potter" time="18.158">
+<system-out><![CDATA[
+Given Shopper opens Amazon site for category shopping.......................passed
+When Shopper logs in with email "bharadwaj333.achimsetty@gmail.com" and password "Bharadwaj333@".passed
+And Shopper selects Books category and searches for Harry Potter............passed
+Then Harry Potter books should be displayed.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Update Amazon Display Language" name="Shopper updates language to Hindi" time="12.385">
+<system-out><![CDATA[
+Given Shopper visits Amazon site for language update........................passed
+When Shopper provides login with email "bharadwaj333.achimsetty@gmail.com" and password "Bharadwaj333@".passed
+And Shopper updates the display language....................................passed
+Then Amazon should show the site in the updated language....................passed
+]]></system-out>
+</testcase>
+<testcase classname="Update Amazon Shopping Country" name="Shopper updates country to United States" time="14.685">
+<system-out><![CDATA[
+Given Shopper navigates to Amazon site for country change...................passed
+When Shopper signs in using email "bharadwaj333.achimsetty@gmail.com" and password "Bharadwaj333@".passed
+And Shopper updates the shopping country....................................passed
+Then Amazon should display items from the selected country..................passed
+]]></system-out>
+</testcase>
+<testcase classname="Browse Amazon Today's Deals" name="Shopper navigates to Today's Deals section" time="17.339">
+<system-out><![CDATA[
+Given Shopper visits Amazon site to explore deals...........................passed
+When Shopper logs in with credentials "bharadwaj333.achimsetty@gmail.com" and "Bharadwaj333@".passed
+And Shopper opens Today's Deals page........................................passed
+Then Shopper should be able to see the deals section........................passed
+]]></system-out>
+</testcase>
+</testsuite>
